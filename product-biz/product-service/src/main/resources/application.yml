@@ -1,0 +1,26 @@
+server:
+  port: 8012
+spring:
+  application:
+    name: product-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://140.143.92.18:62791/cloud-alibaba?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: '!waXp2T!IXYl'
+    jpa:
+      properties:
+        hibernate:
+          ddl-auto: none
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      open-in-view: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.123.187:8848
+    sentinel:
+      transport:
+        # sentinel服务端地址
+        dashboard: 192.168.123.187:8858
+      # 取消延迟加载
+      eager: true
